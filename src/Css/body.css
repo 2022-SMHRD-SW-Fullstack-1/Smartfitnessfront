@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+
+/* 전체 스타일 적용 */
+body{
+    margin:10px;
+    padding: 0px;
+    background-color: #000000;
+    font-family: 'Lato', sans-serif;
+    overflow-y: scroll;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* 상단 */
+
+#logo{
+    width: 90px;
+}
+
+.menuBox{
+    display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width:100%;
+	z-index: 1;
+    background-color: transparent;
+}
+
+.menu{
+	display: flex;
+}
+
+
+.menu li a, .menu span{
+    font-family: 'Lato';
+	height:40px;
+	line-height: 43px;
+	margin: 3px;
+	padding: 0px 22px;
+	display: flex;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.2s ease-in-out;
+	color:#ffffff;
+}
+
+.menu li:hover,span:hover{
+    background-color: #FF1414;
+    color:#ffffff;
+    border-radius: 3px;
+	box-shadow: 5px 10px 30px rgba(255, 2, 2, 0.336);
+	transition: all ease 0.5s;
+}
