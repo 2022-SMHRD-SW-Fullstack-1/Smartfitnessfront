@@ -8,7 +8,7 @@ const MainEvent = () => {
 
         {/* 비디오 출력 */}
         <div className='videoDiv'>
-            <video src={BgVideo} autoPlay muted loop class="video-bg"/>
+            <video src={BgVideo} autoPlay muted loop className="video-bg"/>
         </div>
 
     </div>

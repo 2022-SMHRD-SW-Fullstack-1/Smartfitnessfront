@@ -1,11 +1,38 @@
 import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import logo from '../../img/logo.png'
+import { getCookie, removeCookie } from '../auth/cookie';
 
 // 상단 헤더 메뉴바 컴포넌트
 
 
 const MenuBar = () => {
+
+  const [userState, setUserState] = useState();
+
+      // userState 값 변경 확인
+      useEffect(()=>{
+        if(getCookie("x_auth")===undefined){
+            // 비로그인 경우(빨강)
+            setUserState(false)
+        }else{
+            // 로그인한 경우(파랑)
+            setUserState(true)
+        }
+        
+    },[])
+
+
+    const logoutBtn= ()=>{
+      // 쿠키 삭제
+      removeCookie('x_auth')
+      // 페이지 새로고침
+      window.location.replace('/')
+      
+  }
+
   return (
     <div>
 
@@ -22,7 +49,12 @@ const MenuBar = () => {
               <li><Link to='equip'>Equipment</Link></li>
               <li><Link to='book'>Booking</Link></li>
               <li><Link to='contact'>Contact Us</Link></li>
+              <li className={userState ? 'loginnotic-none' : 'loginnotic'}><Link to='login'>login</Link></li>
+              <li className={userState ? 'loginnotic-none' : 'loginnotic'}><Link to='join'>join</Link></li>
+              <li className={userState ? 'loginnotic' : 'loginnotic-none'} onClick={logoutBtn}><Link>logout</Link></li>
+              <li className={userState ? 'loginnotic' : 'loginnotic-none'}><Link to='mypage'>my page</Link></li>
           </ul>
+
 
         </nav>
     </div>

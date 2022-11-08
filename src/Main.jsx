@@ -2,6 +2,10 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import './Css/body.css'
+import './Css/page.css';
+import './Css/login.css';
+import './Css/join.css';
+import './Css/components.css';
 
 import MenuBar from './Components/MenuBar/MenuBar'
 import MainPage from './Pages/MainPage'
@@ -10,13 +14,13 @@ import Personal from './Pages/Personal'
 import Equip from './Pages/Equip'
 import Booking from './Pages/Booking'
 import Contact from './Pages/Contact'
-import LoginPage from './Pages/LoginPage'
+import Login from './Pages/Login'
 import Join from './Pages/Join'
 
 
 const Main = () => {
   return (
-    <div>
+    <>
 
       {/* 메뉴바 상단 고정 */}
     <MenuBar/>
@@ -28,11 +32,12 @@ const Main = () => {
       <Route path='/equip' element={<Equip/>}/>
       <Route path='/book' element={<Booking/>}/>
       <Route path='/contact' element={<Contact/>}/>
-      <Route path='/login' element={<LoginPage/>}/>
+      <Route path='/login' element={<Login/>}/>
       <Route path='/join' element={<Join/>}/>
+      {/* <Route path='/join' element={<Join/>}/> */}
     </Routes>
 
-    </div>
+    </>
   )
 }
 

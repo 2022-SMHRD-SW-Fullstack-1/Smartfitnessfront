@@ -1,8 +1,11 @@
 import React from 'react'
+import QnA from '../Components/QnA'
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <div className='pagesDiv'>
+      <QnA/>
+    </div>
   )
 }
 

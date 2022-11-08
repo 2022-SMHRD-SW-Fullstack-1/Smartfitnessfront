@@ -1,6 +1,4 @@
-/* 로그인상태 login 페이지 */
-.loginform{
-
+.joinform{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,41 +7,40 @@
     margin-top: 200px;
 
     width: 60%;
-    
 }
 
 /* 로그인페이지 타이틀 */
-.loginform h2{
+.joinform h2{
     margin-bottom: 50px;
     font-size: xx-large;
 
 }
 
-.loginform h2 span{
+.joinform h2 span{
     background-color: #FF1414;
     color:#ffffff;
 	box-shadow: 5px 10px 30px rgba(255, 2, 2, 0.336);
 }
 
-.loginform item{
+.joinform item{
     color: white;
 }
 
 
-.loginform input{
+.joinform input{
     margin-top: 10px;
     width: 200px;
     height: 30px;
 }
 
-.loginform>input:last-child{
+.joinform>input:last-child{
     cursor: pointer;
     margin-top: 50px;
     width: 100px;
     border-radius: 5px;
 }
 
-.loginform>input:last-child:hover{
+.joinform>input:last-child:hover{
     background-color: #FF1414;
     color:#ffffff;
     border-radius: 5px;
@@ -51,12 +48,3 @@
 	transition: all ease 0.5s;
 }
 
-
-
-/* 로그인상태 로그인창 숨기기 */
-.loginform-none{
-    display: none;
-}
-.loginnotic-none{
-    display: none;
-}

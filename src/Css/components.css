@@ -1,0 +1,161 @@
+/* equipments 박스 */
+.equipDiv{
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+
+    text-align: center;
+
+    width: 80%;
+
+    margin-bottom: 300px;
+
+}
+
+.itemBox{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    color: black;
+    
+    width: 200px;
+    height: 300px;
+
+    margin: 20px;
+}
+
+.itemBox img{
+    height: 170px;
+    width: 170px;
+
+    margin-top: 10px;
+    background-color: black;
+}
+
+
+.equipTitle{
+    display: flex;
+}
+
+/* topBtn */
+
+.topBtn{
+    right: 80px;
+    bottom: 50px;
+    position: fixed;
+
+}
+
+.topBtn:hover{
+    cursor: pointer;
+}
+
+
+/* contact */
+
+#contact{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#contact h1{
+    color: #fff;
+    font-size: 3rem;
+}
+#contact form{
+    width:600px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+#contact form input,
+#contact form textarea,
+#contact form select
+{
+    width:100%;
+    height:50px;
+    margin:5px 0px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #ffffff2d;
+    color: #ffffff;
+    border-radius: 5px;
+
+}
+
+
+
+#contact form option{
+    color: #000000;
+
+}
+
+#contact form textarea{
+    height: 150px;
+}
+#contact form input[type="submit"]{
+    height: 45px;
+    background: linear-gradient(90deg, #FF1414 20%,#f70000);
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+
+.progDiv{
+
+    width: 60%;
+    height: 500px;
+
+    border: 3px solid white;
+    overflow: auto;
+
+
+
+
+    color: white;
+    text-align: center;
+}
+
+.timeTable{
+    width: 100%;
+    
+
+}
+
+.timeTable *{
+    height: 40px;
+    border: 1px solid white;
+}
+
+
+.tabDiv{
+    display: flex;
+    justify-content: center;
+    background-color: yellow;
+    padding: 20px;
+}
+
+.tabList{
+    background-color: aqua;
+    padding: 20px;
+    margin-right: 50px;
+}
+
+.panel-content{
+    background-color: red;
+    width: 800px;
+    padding: 20px;
+}
