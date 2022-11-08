@@ -9,20 +9,25 @@ const GxProgram = () => {
     const month = date.getMonth()+1;
     const day = date.getDate();
 
+    const [usedata,setUsedata] = useState({})
+
     //현재 month 포함한 url 값 세팅
-    const url ="http://localhost:8889/smart/programs/timetable/"+month
+    const url ="http://localhost:8889/smart/programs/timetable/"+month+"/"+day
 
     const [pgData,setPgData]=useState([])
 
 
     //페이지 url 변경과 동시에 axios 실행
     useEffect(() => {
-      axios.get(url)
+      axios.post(url,{month:month, day:day},{body:{
+        "Content-Type": "application/json"
+      }})
           .then(res => {
               console.log("Gx페이지 axios then-->",res.data);
               setPgData(res.data)
           });
   }, [url]);
+
 
   return (
     

@@ -2,10 +2,10 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import './Css/body.css'
+import './Css/components.css';
+import './Css/join.css';
 import './Css/page.css';
 import './Css/login.css';
-import './Css/join.css';
-import './Css/components.css';
 
 import MenuBar from './Components/MenuBar/MenuBar'
 import MainPage from './Pages/MainPage'

@@ -1,163 +1,145 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from "axios";
-
-import "../Css/login.css";
-
-import { useNavigate } from "react-router-dom";
-import { getCookie, setCookie } from "../Components/auth/cookie";
-
-
-const Join = (props) => {
+import {toast, ToastContainer} from "react-toastify";
+import * as Yup from "yup";
+import {Formik, ErrorMessage} from "formik";
+import {Button, TextField} from "@mui/material";
 
 
+const Join = () => {
+  const navigate = useNavigate();
+  const validationSchema = Yup.object().shape({
+    email: Yup.string()
+      .email("올바른 이메일 형식이 아닙니다!")
+      .required("이메일을 입력하세요!"),
+    username: Yup.string()
+      .min(2, "닉네임은 최소 2글자 이상입니다!")
+      .max(10, "닉네임은 최대 10글자입니다!")
+      .matches(
+        /^[가-힣a-zA-Z][^!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?\s]*$/,
+        "닉네임에 특수문자가 포함되면 안되고 숫자로 시작하면 안됩니다!"
+      )
+      .required("닉네임을 입력하세요!"),
+    password: Yup.string()
+      .min(8, "비밀번호는 최소 8자리 이상입니다")
+      .max(16, "비밀번호는 최대 16자리입니다!")
+      .required("패스워드를 입력하세요!")
+      .matches(
+        /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[^\s]*$/,
+        "알파벳, 숫자, 공백을 제외한 특수문자를 모두 포함해야 합니다!"
+      ),
+    password2: Yup.string()
+      .oneOf([Yup.ref("password"), null], "비밀번호가 일치하지 않습니다!")
+      .required("필수 입력 값입니다!"),
+  });
+  const submit = async (values) => {
+    const {email, username, password} = values;
+    try {
+      await axios.post("/api/auth/signup", {
+        email,
+        username,
+        password,
+      });
+      toast.success(<h3>회원가입이 완료되었습니다.<br/>로그인 하세요😎</h3>, {
+        position: "top-center",
+        autoClose: 2000
+      });
+      setTimeout(()=> {
+        navigate("/login");
+      }, 2000);
 
-  const [joinData, setJoinData] = useState({})
-    
-  const idRef = useRef()
-  const pwRef = useRef()
-  const nameRef = useRef()
-  const addrRef = useRef()
-  const bdayRef = useRef()
-  const phoneRef = useRef()
-  const emailRef = useRef()
-  const pwCkRef = useRef()
-
-    const navigate = useNavigate();
-
-    const joinBtn =(e)=>{
-      e.preventDefault();
-
-      setJoinData({
-          'mem_id' : idRef.current.value,
-          'mem_pw' : pwRef.current.value,
-          'mem_name' : nameRef.current.value,
-          'mem_addr' : addrRef.current.value,
-          'mem_birthdate' : bdayRef.current.value,
-          'mem_phone' : phoneRef.current.value,
-          'mem_email' : emailRef.current.value,
-      })
-
-      if(pwRef!==pwCkRef){
-          alert('비밀번호를 확인해주세요')
-      }else{
-          
-      }
-
-  }
-
-
-
-
-    const joinFunc = () =>{
-        const url = "http://localhost:8889/smart/members/join";
-        axios
-        .post(url, JSON.stringify(joinData), {
-            headers: {
-            "Content-Type": "application/json",
-            },
-        })
-        .then((res, err) => {
-            setCookie("x_auth", {
-                user_id: res.data.user_id
-            });
-            console.log("x_auth" , getCookie("x_auth"));
-            alert('회원가입 성공!')
-        })
-        .catch((err) => {
-            alert('회원가입 실패...')
-        });
-
-
+    } catch (e) {
+      // 서버에서 받은 에러 메시지 출력
+      toast.error(e.response.data.message + "😭", {
+        position: "top-center",
+      });
     }
+  };
 
-       useEffect(()=>{
-
-        if(Object.keys(joinData).length !== 0 &&
-          joinData.name !== '' && joinData.pw !== '' ){
-            joinFunc();
-            
-            setJoinData({})
-        }
-        
-    },[joinData])
-
-
-  
-    return (
-      <div className="pagesDiv">
-  
-          {/* 회원가입 폼 구간 */}
-
-          <form className="joinform">
-            
-            <h2>Become a <span>MEMBER!</span></h2>
-            <input
-              type="text"
-              placeholder="User Id"
-              required
-              ref={idRef}
-            />
-
-            <input
-              type="password"
-              placeholder="Password"
-              maxLength={20}
-              required
-              ref={pwRef}
-            />
-
-            <input
-              type="password"
-              placeholder="Check Password"
-              maxLength={20}
-              required
-              ref={pwCkRef}
-            />
-
-            <input
-              type="name"
-              placeholder="name"
-              required
-              ref={nameRef}
-            />
-
-            <input
-              type="PhoneNumber"
-              placeholder="PhoneNumber"
-              required
-              ref={phoneRef}
-            />
-
-            <input
-              type="address"
-              placeholder="address"
-              required
-              ref={addrRef}
-            />
-
-            <input
-              type="date"
-              required
-              ref={bdayRef}
-            />
-
-            <input
-              type="email"
-              placeholder="email"
-              required
-              ref={emailRef}
-            />
-
-
-            
-            
-          <input onClick={joinBtn} type='submit' value='JOIN US' />
-            
+  return (
+    <div className='pagesDiv'>
+    <Formik
+      initialValues={{
+        email: "",
+        username: "",
+        password: "",
+        password2: "",
+      }}
+      validationSchema={validationSchema}
+      onSubmit={submit}
+      validateOnMount={true}
+    >
+      {({values, handleSubmit, handleChange, errors}) => (
+        <div className="signup-wrapper">
+          <ToastContainer/>
+          <form onSubmit={handleSubmit} autoComplete="off">
+            <div className="input-forms">
+              <div className="input-forms-item">
+                <div className="input-label">이메일</div>
+                <TextField
+                  value={values.email}
+                  name="email"
+                  variant="outlined"
+                  onChange={handleChange}
+                />
+                <div className="error-message">
+                  {errors.email}
+                </div>
+              </div>
+              <div className="input-forms-item">
+                <div className="input-label">닉네임</div>
+                <TextField
+                  value={values.username}
+                  name="username"
+                  variant="outlined"
+                  onChange={handleChange}
+                />
+                <div className="error-message">
+                  {errors.username}
+                </div>
+              </div>
+              <div className="input-forms-item">
+                <div className="input-label">비밀번호</div>
+                <TextField
+                  value={values.password}
+                  name="password"
+                  variant="outlined"
+                  type="password"
+                  onChange={handleChange}
+                />
+                <div className="error-message">
+                  {errors.password}
+                </div>
+              </div>
+              <div className="input-forms-item">
+                <div className="input-label">비밀번호 확인</div>
+                <TextField
+                  value={values.password2}
+                  name="password2"
+                  variant="outlined"
+                  type="password"
+                  onChange={handleChange}
+                />
+                <div className="error-message">
+                  {errors.password2}
+                </div>
+              </div>
+              <Button
+                color="primary"
+                variant="contained"
+                fullWidth
+                type="submit"
+              >
+                회원가입
+              </Button>
+            </div>
           </form>
-
         </div>
-    );
-  }
+      )}
+    </Formik>
+    </div>
+  )
+}
 
-
-export default Join;
+export default Join

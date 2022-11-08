@@ -1,50 +1,7 @@
-.joinform{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    margin-top: 200px;
-
-    width: 60%;
+.input-label{
+  margin-bottom: 10px;
 }
 
-/* 로그인페이지 타이틀 */
-.joinform h2{
-    margin-bottom: 50px;
-    font-size: xx-large;
-
+fieldset{
+  background-color: whitesmoke;
 }
-
-.joinform h2 span{
-    background-color: #FF1414;
-    color:#ffffff;
-	box-shadow: 5px 10px 30px rgba(255, 2, 2, 0.336);
-}
-
-.joinform item{
-    color: white;
-}
-
-
-.joinform input{
-    margin-top: 10px;
-    width: 200px;
-    height: 30px;
-}
-
-.joinform>input:last-child{
-    cursor: pointer;
-    margin-top: 50px;
-    width: 100px;
-    border-radius: 5px;
-}
-
-.joinform>input:last-child:hover{
-    background-color: #FF1414;
-    color:#ffffff;
-    border-radius: 5px;
-	box-shadow: 5px 10px 30px rgba(255, 2, 2, 0.336);
-	transition: all ease 0.5s;
-}
-
