@@ -6,6 +6,7 @@ import './Scss/components.scss';
 import './Scss/join.scss';
 import './Scss/page.scss';
 import './Scss/login.scss';
+import './Components/Calendar/custom.module.css'
 
 import MenuBar from './Components/MenuBar/MenuBar'
 import MainPage from './Pages/MainPage'
@@ -19,6 +20,7 @@ import Join from './Pages/Join'
 import Mypage from './Pages/Mypage';
 import Membership from './Pages/Membership';
 import { getCookie } from './Components/auth/cookie';
+import Footer from './Components/Footer';
 
 
 const Main = () => {
@@ -44,6 +46,8 @@ console.log(getCookie("x_auth"))
       {/* <Route path='/join' element={<Join/>}/> */}
     </Routes>
 
+
+    <Footer/>
     </>
   )
 }

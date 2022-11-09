@@ -1,0 +1,33 @@
+
+
+    .col-md-12{
+        background-color: aqua;
+    }
+
+    .fc-day-number {
+        font-size: 1.5em;
+        color: #5c0000;
+      }
+      
+      .fc-day-header {
+        font-size: 1.5em;
+        color: #b20000;
+      }
+    
+      #Calendar {
+          font-family: sans-serif;
+          text-align: center;
+        }
+        .col-md-12 {
+          background-color: white;
+          color: black;
+        }
+
+
+
+
+
+    
+
+
+  

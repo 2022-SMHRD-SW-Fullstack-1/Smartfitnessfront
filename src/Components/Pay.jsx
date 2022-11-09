@@ -43,6 +43,7 @@ function Pay() {
             merchant_uid: merchant_uid,  // 주문번호
             amount: amount,  // 결제금액
             imp_uid:"SF",
+            buyer_name: memData.mem_name,
             buyer_email: memData.mem_email,
         })
         .then((r) => {

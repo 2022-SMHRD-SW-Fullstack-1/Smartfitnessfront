@@ -1,15 +1,15 @@
 import React from 'react'
+import Calendar from '../Components/Calendar/Calender'
 
 const Booking = () => {
   return (
-    <div className='pagesDiv'>
-      <h1>Booking</h1>
-      <div className='bookingDiv'>
-        <div>Personal Traning</div>
+    <div className='bookingDiv'>
+        <h1>Booking</h1>
+        <Calendar/>
+        {/* <div>Personal Traning</div>
         <div>Gx programs</div>
-        <div>Equipments</div>
+        <div>Equipments</div> */}
       </div>
-    </div>
   )
 }
 
