@@ -47,7 +47,7 @@ const QnA = () => {
       })
         .then(()=>{
           console.log(userData)
-          console.log('then')
+          console.log('then -> 질문 등록 성공!')
         })
         .catch(()=>{console.log('catch')})
       }
@@ -55,7 +55,7 @@ const QnA = () => {
 
 
   useEffect(()=>{
-    getCookie('x_auth')!=null&&setReqId (getCookie('x_auth').mem_id)
+    getCookie('x_auth')!=null&&setReqId (getCookie('x_auth').mem_data.mem_id)
   },[])
   return (
     <div id='contact'>

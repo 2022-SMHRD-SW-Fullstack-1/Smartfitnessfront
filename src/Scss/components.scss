@@ -1,4 +1,5 @@
-/* equipments 박스 */
+#root{
+    
 .equipDiv{
     display: flex;
 
@@ -158,4 +159,11 @@
     background-color: red;
     width: 800px;
     padding: 20px;
+}
+
+
+.error-message{
+    color: red;
+    font-size: smaller;
+}
 }

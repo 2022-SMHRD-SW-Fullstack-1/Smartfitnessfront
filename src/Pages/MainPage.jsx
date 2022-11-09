@@ -4,6 +4,7 @@ import MainEvent from '../Components/Main/MainEvent'
 
 const MainPage = () => {
 
+
   return (
     <div>
         <MainEvent/>

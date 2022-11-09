@@ -51,7 +51,7 @@ const Login = () => {
         })
         .then((res, err) => {
             setCookie("x_auth", {
-                mem_id: res.data.mem_id
+                mem_data: res.data
             });
             console.log("backend에서 가져온 값 -->",res.data)
             alert(res.data.mem_id+' 님 환영합니다!')

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-import './Css/body.css'
-import './Css/components.css';
-import './Css/join.css';
-import './Css/page.css';
-import './Css/login.css';
+import './Scss/body.scss'
+import './Scss/components.scss';
+import './Scss/join.scss';
+import './Scss/page.scss';
+import './Scss/login.scss';
 
 import MenuBar from './Components/MenuBar/MenuBar'
 import MainPage from './Pages/MainPage'
@@ -16,9 +16,14 @@ import Booking from './Pages/Booking'
 import Contact from './Pages/Contact'
 import Login from './Pages/Login'
 import Join from './Pages/Join'
+import Mypage from './Pages/Mypage';
+import Membership from './Pages/Membership';
+import { getCookie } from './Components/auth/cookie';
 
 
 const Main = () => {
+
+console.log(getCookie("x_auth"))
   return (
     <>
 
@@ -34,6 +39,8 @@ const Main = () => {
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/join' element={<Join/>}/>
+      <Route path='/mypage' element={<Mypage/>}/>
+      <Route path='/membership' element={<Membership/>}/>
       {/* <Route path='/join' element={<Join/>}/> */}
     </Routes>
 

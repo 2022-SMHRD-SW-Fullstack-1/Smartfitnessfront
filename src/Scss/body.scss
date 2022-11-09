@@ -2,13 +2,19 @@
 
 
 /* 전체 스타일 적용 */
-body{
-    margin:10px;
-    padding: 0px;
-    background-color: #000000;
-    font-family: 'Lato', sans-serif;
-    overflow-y: scroll;
-}
+#body{
+
+	background-color: black;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;}
+
+
+#root{ 
+	display: flex;
+	justify-content: center;
+	width: 80%;
 
 *{
     box-sizing: border-box;
@@ -68,4 +74,6 @@ a{
     border-radius: 3px;
 	box-shadow: 5px 10px 30px rgba(255, 2, 2, 0.336);
 	transition: all ease 0.5s;
+}
+
 }
