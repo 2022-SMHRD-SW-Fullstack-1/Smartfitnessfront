@@ -46,6 +46,8 @@
     width: 80%;
 
 
+    // My page
+
     .membership{
         display: flex;
         background-color: black;
@@ -105,6 +107,8 @@
 
 
 
+    // Booking page
+
     .bookingDiv{
         display: flex;
     }
@@ -115,6 +119,48 @@
         width: 200px;
         height: 250px;
         color: black;
+    }
+
+
+
+    // PT page
+    .ptList{
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+
+    }
+
+
+    // Equip page
+
+    .equipDiv{
+        display: flex;
+    
+        flex-wrap: wrap;
+    
+        justify-content: center;
+        align-items: center;
+    
+    
+        text-align: center;
+    
+        width: 80%;
+    
+        margin-bottom: 50px;
+    
+    }
+
+    .equipList{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+
+    .equipTitle{
+        display: flex;
+        margin-bottom: 100px;
     }
 }
 

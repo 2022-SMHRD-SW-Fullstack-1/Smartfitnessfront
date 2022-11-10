@@ -21,14 +21,14 @@ const TimeTable = (props) => {
     <div className="gxProgDiv">
       <h1>GX Programs</h1>
       <Tabs className="tabDiv">
-        <TabList className="tabList">
+        {/* <TabList className="tabList">
           <Tab><p>{month}월 {day}일 ({weekdays[weekday]})</p></Tab>
           <Tab><p>{month}월 {day+1}일 ({weekdays[weekday+1]})</p></Tab>
           <Tab><p>{month}월 {day+2}일 ({weekdays[weekday+2]})</p></Tab>
           <Tab><p>{month}월 {day+3}일 ({weekdays[weekday+3]})</p></Tab>
           <Tab><p>{month}월 {day+4}일 ({weekdays[weekday+4]})</p></Tab>
 
-        </TabList>
+        </TabList> */}
 
         {props.timeData.map((item,idx)=>(
 

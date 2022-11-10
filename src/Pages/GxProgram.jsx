@@ -7,19 +7,18 @@ const GxProgram = () => {
     // 현재 시간 출력해서 원하는 month 값 불러오기
     const date = new Date();
     const month = date.getMonth()+1;
-    const day = date.getDate();
 
     const [usedata,setUsedata] = useState({})
 
     //현재 month 포함한 url 값 세팅
-    const url ="http://localhost:8889/smart/programs/timetable/"+month+"/"+day
+    const url ="http://localhost:8889/smart/programs/timetable/"+month
 
     const [pgData,setPgData]=useState([])
 
 
     //페이지 url 변경과 동시에 axios 실행
     useEffect(() => {
-      axios.post(url,{month:month, day:day},{body:{
+      axios.post(url,{month:month},{body:{
         "Content-Type": "application/json"
       }})
           .then(res => {

@@ -150,15 +150,15 @@ export default function Calendar() {
 
 
   function handleSubmit() {
-    console.log("axios 실행 전 담아주는 값 찍기 ->",state.selectInfo.startStr);
-    console.log("axios 실행 전 담아주는 값 찍기2 ->",state.selectInfo.endStr);
+    console.log("axios 실행 전 담아주는 값 찍기 시작 ->",state.selectInfo.startStr);
+    console.log("axios 실행 전 담아주는 값 찍기 종료 ->",state.selectInfo.endStr);
     const newEvent = {
       mem_id: userId,
       trainer:title,
-      curr_pt_s_dt : state.selectInfo.startStr,
-      curr_pt_d_dt : state.selectInfo.endStr,
-    //   start: state.selectInfo?.startStr || start.toISOString(),
-    //   end: state.selectInfo?.endStr || end.toISOString(),
+      // curr_pt_s_dt : state.selectInfo.startStr,
+      // curr_pt_d_dt : state.selectInfo.endStr,
+      start: state.selectInfo?.startStr || start.toISOString(),
+      end: state.selectInfo?.endStr || end.toISOString(),
       allDay: state.selectInfo?.allDay || false
     };
 

@@ -1,21 +1,6 @@
 #root{
     
-.equipDiv{
-    display: flex;
 
-    flex-wrap: wrap;
-
-    justify-content: center;
-    align-items: center;
-
-
-    text-align: center;
-
-    width: 80%;
-
-    margin-bottom: 300px;
-
-}
 
 .itemBox{
     display: flex;
@@ -41,10 +26,6 @@
     background-color: black;
 }
 
-
-.equipTitle{
-    display: flex;
-}
 
 /* topBtn */
 

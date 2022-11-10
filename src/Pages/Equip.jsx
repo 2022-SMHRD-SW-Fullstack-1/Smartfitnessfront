@@ -33,6 +33,8 @@ const Equip = () => {
 
       <h1>Equipments</h1>
 
+
+
       <div className='equipTitle'>
         <Link to ='cList' smooth={true} duration={500} >
           <EquipBox name='Cardio'></EquipBox>
@@ -45,23 +47,29 @@ const Equip = () => {
         </Link>
       </div>
 
-
       <h1 id='cList'>Cardio</h1>
+
+      <div className='equipList'>
       <div className='equipDiv' >
         {cList&&cList.map((item,idx)=>(<EquipBox key={item.em_name+idx} name={item.em_name} desc={item.em_part} img ={item.em_video}/>))}
       </div>
+      </div>
 
       <h1 id='fList'>Free weight</h1>
+      <div className='equipList'>
       <div className='equipDiv'>
         {fList&&fList.map((item,idx)=>(<EquipBox key={item.em_name+idx} name={item.em_name} desc={item.em_part} img ={item.em_video}/>))}
       </div>
+      </div>
      
-
       <h1 id='mList'>Machine</h1>
+      <div className='equipList'>
       <div className='equipDiv'>
         {mList&&mList.map((item,idx)=>(<EquipBox key={item.em_name+idx} name={item.em_name} desc={item.em_part} img ={item.em_video}/>))}
       </div>
+      </div>
 
+      
     <TopBtn/>
     </div>
   )
