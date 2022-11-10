@@ -25,7 +25,8 @@ import Footer from './Components/Footer';
 
 const Main = () => {
 
-console.log(getCookie("x_auth"))
+// console.log(getCookie("x_auth"))
+
   return (
     <>
 
@@ -35,6 +36,7 @@ console.log(getCookie("x_auth"))
     <Routes>
       <Route path='/' element={<MainPage/>}/>
       <Route path='/gx-prog' element={<GxProgram/>}/>
+      <Route path='/gx-prog/book/*' element={<MainPage/>}/>
       <Route path='/pt-class' element={<Personal/>}/>
       <Route path='/equip' element={<Equip/>}/>
       <Route path='/book' element={<Booking/>}/>

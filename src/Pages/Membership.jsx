@@ -14,14 +14,14 @@ const Membership = () => {
                 <h3>Basic</h3>
                 <p>+ 30days Membership</p>
                 <p>+ Free Locker</p>
-                <Pay/>
+                <Pay name='basic' price='100'/>
             </div>
             <div>
                 <h3>Basic<span>+</span></h3>
                 <p>+ 30days Membership</p>
                 <p>+ Free Locker</p>
                 <p>+ Available to Booking</p>
-                <Pay/>
+                <Pay name='basic+' price='100'/>
             </div>
             <div>
                 <h3>Premium</h3>
@@ -29,7 +29,7 @@ const Membership = () => {
                 <p>+ Free Locker</p>
                 <p>+ Available to Booking</p>
                 <p>+ Free Personal Training (twice)</p>
-                <Pay/>
+                <Pay name='Premium' price='500'/>
             </div>
 
         </div>

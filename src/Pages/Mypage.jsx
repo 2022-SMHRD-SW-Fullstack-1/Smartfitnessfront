@@ -20,8 +20,10 @@ const Mypage = () => {
 
             <button>Update profile</button>
             <div>
+
             <h3>Membership</h3>
             <p>남은 기간 출력</p>
+            
             <Link to='/membership'>
             <button>이용권 연장</button>
             </Link>

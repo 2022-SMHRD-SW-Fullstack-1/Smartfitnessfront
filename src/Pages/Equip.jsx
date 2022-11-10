@@ -29,7 +29,7 @@ const Equip = () => {
   
 
   return (
-    <div class='pagesDiv'>
+    <div className='pagesDiv'>
 
       <h1>Equipments</h1>
 
