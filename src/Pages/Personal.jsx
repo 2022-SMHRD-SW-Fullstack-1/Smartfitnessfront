@@ -27,8 +27,10 @@ const Personal = () => {
       <div className='ptList'>
         {trainerData.map((item,idx)=><EquipBox key={item.trainer_name+idx} 
         name={item.trainer_name}
+        info={item.trainer_info}
         desc={item.trainer_ment}
         img={item.trainer_pic}
+        price={item.trainer_price+'원'}
         />)}
       </div>
 

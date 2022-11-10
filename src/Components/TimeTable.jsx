@@ -19,7 +19,7 @@ const TimeTable = (props) => {
 
   const bookBtn =(e)=>{
     console.log("e찍기-->",e)
-    navigate("book?date="+e.start_date+"&time="+e.start_time+"&name="+e.pg_name+"&num=")
+    // navigate("book?date="+e.start_date+"&time="+e.start_time+"&name="+e.pg_name+"&num=")
 
   }
 
@@ -55,10 +55,11 @@ const TimeTable = (props) => {
             </tr>
           
             {props.timeData.map((item,idx) => {return(
-              // 보내준 값 조합하여 url로 보내주기(팝업으로 변경 가능?)
                 <tr
                 key={item.start_time+idx}
-                onClick={bookBtn}>
+                onClick={bookBtn=>{
+                  navigate("book?date="+item.start_date+"&time="+item.start_time+"&name="+item.pg_name+"&num="+item.weekday)
+                }}>
 
                   <td>
                     {item.start_date.substring(2, 4)}월

@@ -21,6 +21,7 @@ import Mypage from './Pages/Mypage';
 import Membership from './Pages/Membership';
 import { getCookie } from './Components/auth/cookie';
 import Footer from './Components/Footer';
+import GxBook from './Pages/GxBook';
 
 
 const Main = () => {
@@ -36,7 +37,7 @@ const Main = () => {
     <Routes>
       <Route path='/' element={<MainPage/>}/>
       <Route path='/gx-prog' element={<GxProgram/>}/>
-      <Route path='/gx-prog/book/*' element={<MainPage/>}/>
+      <Route path='/gx-prog/book/*' element={<GxBook/>}/>
       <Route path='/pt-class' element={<Personal/>}/>
       <Route path='/equip' element={<Equip/>}/>
       <Route path='/book' element={<Booking/>}/>

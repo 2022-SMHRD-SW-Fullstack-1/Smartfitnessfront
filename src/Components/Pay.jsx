@@ -18,6 +18,8 @@ function Pay(props) {
         setUserName(getCookie('x_auth').mem_data.mem_id)
         setUserEmail(getCookie('x_auth').mem_data.mem_email)
         setUserPhone(getCookie('x_auth').mem_data.mem_phone)
+        console.log(getCookie('x_auth'))
+
     },[])
 
 
@@ -26,7 +28,6 @@ function Pay(props) {
         /* STEP2. 결제 준비하기 */
         const { IMP } = window;
           IMP.init('imp11181568');
-      
           const merchant_uid = 'merchant_' + new Date().getTime();
           const amount = Number(props.price);
           const data = {
@@ -38,14 +39,15 @@ function Pay(props) {
               buyer_email: userEmail,
               buyer_name: userName,
               buyer_tel: userPhone
-          };
+            };
+
           /* STEP5-3. 결제 정보 검증 후 저장하기 */
           // 처음에 요청했던 금액 저장하기 (추후 검증을 위해)
           axios.post("http://localhost:8889/smart/payments/insertPaymentInfo", {
               merchant_uid: merchant_uid,  // 주문번호
               amount: amount,  // 결제금액
               imp_uid:"SF",
-              buyer_email: "soengjomin@naver.com",
+              email: userEmail,
           })
           .then((r) => {
               if(r.data == "ok"){

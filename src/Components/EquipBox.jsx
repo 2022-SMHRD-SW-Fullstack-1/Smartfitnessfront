@@ -5,8 +5,10 @@ const EquipBox = (props) => {
   return (
     <div className='itemBox'>
       <img src={props.img} alt={props.name}/>
-      <h2>{props.name}</h2>
+      <h1>{props.name}</h1>
       <p>{props.desc}</p>
+      <p>{props.info}</p>
+      <h2>{props.price}</h2>
     </div>
   )
 }
