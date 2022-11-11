@@ -20,7 +20,7 @@ import DateRangePicker from "react-bootstrap-daterangepicker";
 
 
 
-import events from "./events";
+// import events from "./events";
 import CustomModal from "./CustomModal";
 import axios, { Axios } from "axios";
 import { getCookie } from "../auth/cookie";
@@ -116,9 +116,22 @@ export default function Calendar() {
 
   }
 
-
-  function handleEvents(events) {
-    setCurrentEvents(events);
+// [{목록1}, {목록2}, ...]
+// 배열의 요소 하나하나씩 변형시켜줄 때 사용 = map() filter()
+// 일정이름 = title, 일정id = id, groupId, 시작일 = start, 종료일 = end
+  function handleEvents() {
+    axios.post(`http://localhost:8889/smart/booking/calendar`)
+    .then(e => {
+      const eventList = e.map(item => ({
+        id: item.reserv_pt,
+        groupId: item.mem_id,
+        title: item.trainer,
+        start: item.start,
+        end: item.end
+      }))
+      setCurrentEvents(eventList)
+    })
+    .catch(e => console.log('캘린더 로드 실패', e))
   }
 
 
@@ -264,7 +277,7 @@ export default function Calendar() {
               select={handleDateSelect}
               eventContent={renderEventContent} 
               eventClick={handleEventClick}
-              eventsSet={() => handleEvents(events)}
+              eventsSet={() => handleEvents()}
               eventDrop={handleEventDrop}
               eventResize={handleEventResize}
 
