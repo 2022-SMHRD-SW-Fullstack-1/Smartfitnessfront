@@ -47,7 +47,7 @@ function Pay(props) {
               merchant_uid: merchant_uid,  // 주문번호
               amount: amount,  // 결제금액
               imp_uid:"SF",
-              email: userEmail,
+              buyer_email: "test@naver.com",
           })
           .then((r) => {
               if(r.data == "ok"){
@@ -56,26 +56,31 @@ function Pay(props) {
                       if (response.success) {
                           /* STEP4. 결제 정보 전달하기 */
                           axios.post("http://localhost:8889/smart/payments/complete", {
+                           
                               imp_uid: response.imp_uid,
                               merchant_uid: response.merchant_uid
                           })
                           .then((r) => {
                               /* STEP6. 결제 응답 처리하기 */
                               if(r.data === "success"){ // 결제 성공 시 로직
+                                console.log(userEmail)
                                   navigate("/OrderSuccess", {	
                                       state:{	
                                           imp_uid: response.imp_uid,	
                                           merchant_uid: response.merchant_uid
                                       }	
                                   });	
-                              }else if(r.data === "vbankIssued"){ // 가상계좌 발급 시 로직
+                              }else if(r.data === "vbankIssued"){
+                                console.log(userEmail) // 가상계좌 발급 시 로직
                                   navigate("/VbankIssued", {	
                                       state:{
                                           imp_uid: response.imp_uid,	
                                           merchant_uid: response.merchant_uid
                                       }	
+                                      
                                   });	
                               } else{
+                                console.log(userEmail)
                                   alert('결제 실패: 결제 응답이 success가 아님');
                               }
                           })
@@ -83,14 +88,17 @@ function Pay(props) {
                               console.log(e);
                           })
                       } else {
+                        console.log(userEmail)
                           alert(`결제 실패: ${response.error_msg}`);
                       }
                     });
               }else{
+                console.log(userEmail)
                   alert('결제 실패: 결제 데이터 입력 실패');
               }
           })
           .catch((e) => {
+            console.log(userEmail)
               console.log(e);
           })
       }

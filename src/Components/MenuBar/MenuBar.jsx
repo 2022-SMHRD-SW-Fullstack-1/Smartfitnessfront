@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../img/logo.png'
 import { getCookie, removeCookie } from '../auth/cookie';
 
@@ -11,6 +11,7 @@ import { getCookie, removeCookie } from '../auth/cookie';
 const MenuBar = () => {
 
   const [userState, setUserState] = useState();
+  const navigate = useNavigate()
 
       // userState 값 변경 확인
       useEffect(()=>{
@@ -33,6 +34,17 @@ const MenuBar = () => {
       
   }
 
+  const notice =()=>{
+    if(userState===false){
+      alert('로그인이 필요한 기능입니다')
+      navigate('login')
+    }else{
+      navigate('book')
+    }
+  }
+
+
+
   return (
     <div>
 
@@ -47,7 +59,7 @@ const MenuBar = () => {
               <li><Link to='gx-prog'>GX</Link></li>
               <li><Link to='pt-class'>PT</Link></li>
               <li><Link to='equip'>Equipment</Link></li>
-              <li><Link to='book'>Booking</Link></li>
+              <li><span onClick={notice} style={{cursor:'pointer'}}>Booking</span></li>
               <li><Link to='contact'>Contact Us</Link></li>
               <li className={userState ? 'loginnotic-none' : 'loginnotic'}><Link to='login'>login</Link></li>
               <li className={userState ? 'loginnotic-none' : 'loginnotic'}><Link to='join'>join</Link></li>

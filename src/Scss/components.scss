@@ -101,10 +101,21 @@
 
 // Programs page
 
-.panel-content{
+.tabDiv{
     justify-content: center;
     align-items: center;
+
+    background-color: aqua;
+    width: 800px;
+
+    box-sizing: content-box;
 }
+
+.timeTable{
+    background-color: wheat;
+}
+
+
 
 .timeTable tbody{
 
@@ -120,8 +131,10 @@
 
 .timeTable td{
     width: 300px;
+    padding: 30px;
     height: 50px;
-    border: 1px solid black;
+    border: 1px solid white;
+    cursor: pointer;
 }
 
 
@@ -141,9 +154,9 @@
 
 .panel-content{
     display: flex;
-    background-color: whitesmoke;
     width: 800px;
     padding: 20px;
+    color: white;
 }
 
 
@@ -156,6 +169,8 @@
 }
 
 .footer-page{
+
+
     margin-top: 50px;
     
     text-align: center;

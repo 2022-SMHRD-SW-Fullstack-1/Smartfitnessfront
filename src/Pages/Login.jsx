@@ -55,6 +55,7 @@ const Login = () => {
             });
             console.log("backend에서 가져온 값 -->",res.data)
             alert(res.data.mem_id+' 님 환영합니다!')
+            // window.history.goBack()
             window.location.replace('/')
             
         })
