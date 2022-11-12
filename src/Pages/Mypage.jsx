@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getCookie } from '../Components/auth/cookie'
+import Star from './Star'
+import Rating from './Rating'
 
 const Mypage = () => {
 
@@ -51,13 +53,12 @@ const Mypage = () => {
             <button>이용권 연장</button>
             </Link>
             </div>
-
             <div>
             <h4>예약현황</h4>
             <h3></h3>
+            <Rating starts={0} />
             </div>
 
-            
             
         </div>
 
