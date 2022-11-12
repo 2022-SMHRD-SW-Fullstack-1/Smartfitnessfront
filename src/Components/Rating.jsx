@@ -4,6 +4,15 @@ import Star from "./Star";
 class Rating extends Component {
   static defaultProps = { max: 5 };
   constructor(props) {
+    axios
+    .put(` http://localhost:8889/smart//programs/trainer/rate${id}`, {
+        ratingValue: rating,
+    })
+    .then((response) => {
+        setRating;
+        console.log("success", response);
+    });
+
     super(props);
     this.state = {
       dynamicValue: props.stars,
