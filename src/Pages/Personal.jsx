@@ -30,7 +30,7 @@ const Personal = () => {
         name={item.trainer_name}
         info={item.trainer_info}
         desc={item.trainer_ment}
-        img={item.trainer_pic}
+        img1={item.trainer_pic}
         type='1'
         price={'$'+item.trainer_price+".00(USD)"}
         />)}

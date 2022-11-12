@@ -32,7 +32,14 @@ const GxProgram = () => {
     
     <div className = 'pagesDiv'>
 
-      
+      {pgData.map((item,idx)=><TimeTable key={item+idx} 
+      start={item.start_date}
+      name={item.pg_name}
+      weekday={item.weekday}
+      max={item.pg_max_peo}
+      curr={item.curr_num_peo}
+      />)}
+
 
 
     </div>

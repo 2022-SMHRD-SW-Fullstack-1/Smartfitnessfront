@@ -99,71 +99,71 @@
 
 
 
-// Programs page
+// // Programs page
 
-.tabDiv{
-    justify-content: center;
-    align-items: center;
+// .tabDiv{
+//     justify-content: center;
+//     align-items: center;
 
-    background-color: aqua;
-    width: 800px;
+//     background-color: aqua;
+//     width: 800px;
 
-    box-sizing: content-box;
-}
+//     box-sizing: content-box;
+// }
 
-.timeTable{
-    background-color: wheat;
-}
-
-
-
-.timeTable tbody{
+// .timeTable{
+//     background-color: wheat;
+// }
 
 
-    width: 800px;
-    height: 500px;
-    overflow: auto;
 
-    font-size:larger
+// .timeTable tbody{
+
+
+//     width: 800px;
+//     height: 500px;
+//     overflow: auto;
+
+//     font-size:larger
     
 
-}
+// }
 
-.timeTable td{
-    width: 300px;
-    padding: 30px;
-    height: 50px;
-    border: 1px solid white;
-    cursor: pointer;
-}
-
-
-.tabDiv{
-    display: flex;
-    justify-content: center;
-    color: black;
-    height: 900px;
-    padding: 20px;
-}
-
-.tabList{
-    background-color: aqua;
-    padding: 20px;
-    margin-right: 50px;
-}
-
-.panel-content{
-    display: flex;
-    width: 800px;
-    padding: 20px;
-    color: white;
-}
+// .timeTable td{
+//     width: 300px;
+//     padding: 30px;
+//     height: 50px;
+//     border: 1px solid white;
+//     cursor: pointer;
+// }
 
 
-.error-message{
-    color: red;
-    font-size: smaller;
-}
+// .tabDiv{
+//     display: flex;
+//     justify-content: center;
+//     color: black;
+//     height: 900px;
+//     padding: 20px;
+// }
+
+// .tabList{
+//     background-color: aqua;
+//     padding: 20px;
+//     margin-right: 50px;
+// }
+
+// .panel-content{
+//     display: flex;
+//     width: 800px;
+//     padding: 20px;
+//     color: white;
+// }
+
+
+// .error-message{
+//     color: red;
+//     font-size: smaller;
+// }
 
 
 }
@@ -186,4 +186,14 @@
 
 .footer-page>p>span{
     margin-right: 10px;
+}
+
+.gxBox{
+    background-color: white;
+    color: black;
+    margin: 30px;
+    padding-top: 20px;
+    width: 200px;
+    height: 250px;
+
 }

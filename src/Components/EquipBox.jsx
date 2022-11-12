@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const EquipBox = (props) => {
 
   const navigate =useNavigate()
+
+  const [image,setImage]=useState(props.img1);
+
+  const imgChange =()=>{
+    if(props.img2!==undefined){
+      setImage(props.img2)
+    }
+  }
+
+  const imgBack =()=>{
+    setImage(props.img1)
+  }
+
+
+
 
   const movePage =()=>{
     if(props.type==='1'){
@@ -17,7 +32,7 @@ const EquipBox = (props) => {
 
   return (
     <div className='itemBox' onClick={movePage}>
-      <img src={props.img} alt={props.name}/>
+      <img onMouseEnter={imgChange} onMouseLeave={imgBack} src={image} alt={props.name}/>
       <h1>{props.name}</h1>
       <p className='eBoxInfo'>{props.info}</p>
       <p>{props.desc}</p>

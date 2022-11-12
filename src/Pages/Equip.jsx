@@ -23,6 +23,7 @@ const Equip = () => {
     axios.get(url)
     .then(res => {
       setEqData(res.data)
+      console.log(res.data)
     });
     }, [url]);
 
@@ -51,21 +52,21 @@ const Equip = () => {
 
       <div className='equipList'>
       <div className='equipDiv' >
-        {cList&&cList.map((item,idx)=>(<EquipBox key={item.em_name+idx} name={item.em_name} desc={item.em_part} img ={item.em_video} type='0'/>))}
+        {cList&&cList.map((item,idx)=>(<EquipBox key={item.em_name+idx} name={item.em_name} desc={item.em_part} img1 ={item.em_img1} img2 ={item.em_img2} type='0'/>))}
       </div>
       </div>
 
       <h1 id='fList'>Free weight</h1>
       <div className='equipList'>
       <div className='equipDiv'>
-        {fList&&fList.map((item,idx)=>(<EquipBox key={item.em_name+idx} name={item.em_name} desc={item.em_part} img ={item.em_video} type='0'/>))}
+        {fList&&fList.map((item,idx)=>(<EquipBox key={item.em_name+idx} name={item.em_name} desc={item.em_part}  img1 ={item.em_img1} img2 ={item.em_img2} type='0'/>))}
       </div>
       </div>
      
       <h1 id='mList'>Machine</h1>
       <div className='equipList'>
       <div className='equipDiv'>
-        {mList&&mList.map((item,idx)=>(<EquipBox key={item.em_name+idx} name={item.em_name} desc={item.em_part} img ={item.em_video} type='0'/>))}
+        {mList&&mList.map((item,idx)=>(<EquipBox key={item.em_name+idx} name={item.em_name} desc={item.em_part}  img1 ={item.em_img1} img2 ={item.em_img2} type='0'/>))}
       </div>
       </div>
 
