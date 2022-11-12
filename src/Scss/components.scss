@@ -12,10 +12,11 @@
     background-color: white;
     color: black;
     
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    height: auto;
 
     margin: 20px;
+    padding: 10px;
 }
 
 .itemBox img{
@@ -96,51 +97,43 @@
 }
 
 
-.progDiv{
-
-    width: 60%;
-    height: 500px;
-
-    border: 3px solid white;
-    overflow: auto;
 
 
+// Programs page
 
+.tabDiv{
+    justify-content: center;
+    align-items: center;
 
-    color: white;
-    text-align: center;
+    background-color: aqua;
+    width: 800px;
+
+    box-sizing: content-box;
 }
 
 .timeTable{
-    width: 100%;
+    background-color: wheat;
+}
+
+
+
+.timeTable tbody{
+
+
+    width: 800px;
+    height: 500px;
+    overflow: auto;
+
+    font-size:larger
     
 
 }
 
-.timeTable *{
-    height: 100px;
-    border: 1px solid rgb(110, 116, 110);
+ kjw
 }
 
 
-.tabDiv{
-    display: flex;
-    justify-content: center;
-    background-color: rgb(45, 46, 45);
-    padding: 20px;
-}
 
-.tabList{
-    background-color: aqua;
-    padding: 20px;
-    margin-right: 50px;
-}
-
-.panel-content{
-    background-color: rgb(45, 46, 45);
-    width: 1200px;
-    padding: 20px;
-}
 
 
 .error-message{
@@ -152,6 +145,8 @@
 }
 
 .footer-page{
+
+
     margin-top: 50px;
     
     text-align: center;

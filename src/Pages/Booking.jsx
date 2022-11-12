@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Calendar from '../Components/Calendar/Calender'
 
-const Booking = () => {
+const Booking = (props) => {
+
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    if(props.type==="0"){
+      navigate("/login")
+    }else{
+
+    }
+  },[])
+  
   return (
     <div className='bookingDiv'>
         <h1>Booking</h1>

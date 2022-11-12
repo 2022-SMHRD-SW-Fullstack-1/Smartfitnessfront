@@ -32,7 +32,7 @@ const GxProgram = () => {
     
     <div className = 'pagesDiv'>
 
-      <TimeTable timeData={pgData}/>
+      
 
 
     </div>

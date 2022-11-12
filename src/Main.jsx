@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import './Scss/body.scss'
@@ -21,11 +21,20 @@ import Mypage from './Pages/Mypage';
 import Membership from './Pages/Membership';
 import { getCookie } from './Components/auth/cookie';
 import Footer from './Components/Footer';
+import GxBook from './Pages/GxBook';
+import BookEq from './Pages/BookEq';
+import PtInfo from './Pages/PtInfo';
 
 
 const Main = () => {
 
-console.log(getCookie("x_auth"))
+// console.log(getCookie("x_auth"))
+
+const [loginState,setLoginState]=useState();
+
+
+
+
   return (
     <>
 
@@ -35,9 +44,12 @@ console.log(getCookie("x_auth"))
     <Routes>
       <Route path='/' element={<MainPage/>}/>
       <Route path='/gx-prog' element={<GxProgram/>}/>
+      <Route path='/gx-prog/book/*' element={<GxBook/>}/>
       <Route path='/pt-class' element={<Personal/>}/>
       <Route path='/equip' element={<Equip/>}/>
       <Route path='/book' element={<Booking/>}/>
+      <Route path='/pt-info/*' element={<PtInfo/>}/>
+      <Route path='/book-eq/*' element={<BookEq/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/join' element={<Join/>}/>

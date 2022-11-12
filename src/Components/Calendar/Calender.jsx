@@ -45,7 +45,6 @@ export default function Calendar() {
   const [userId,setUserId]=useState();
 
 
-  console.log(userId)
   useEffect(()=>{
     setUserId(getCookie("x_auth").mem_data.mem_id)
   },[])
@@ -115,24 +114,33 @@ export default function Calendar() {
     setModal(true);
 
   }
-
 // [{목록1}, {목록2}, ...]
 // 배열의 요소 하나하나씩 변형시켜줄 때 사용 = map() filter()
 // 일정이름 = title, 일정id = id, groupId, 시작일 = start, 종료일 = end
-  function handleEvents() {
-    axios.post(`http://localhost:8889/smart/booking/calendar`)
-    .then(e => {
-      const eventList = e.map(item => ({
-        id: item.reserv_pt,
-        groupId: item.mem_id,
-        title: item.trainer,
-        start: item.start,
-        end: item.end
-      }))
-      setCurrentEvents(eventList)
-    })
-    .catch(e => console.log('캘린더 로드 실패', e))
-  }
+function loadEvents() {
+  const userId = getCookie('x_auth').mem_data.mem_id
+  axios.post(`http://localhost:8889/smart/programs/PT/timetable/11`)
+  .then(e => {
+    console.log("데이터맵찍기=-->",e.data)
+    const eventList = e.data.map(item => ({
+      id: item.reserv_pt_seq,
+      groupId: userId ,
+      title: item.trainer,
+      start: new Date(item.start),
+      end: new Date(item.end)
+    }))
+    // date 형식 맞춰주기
+    // 마리아 DB date형식을 fullcalendar 형식 JS date() 형식으로  포맷팅 후에 넣기
+
+    setCurrentEvents(eventList)
+    console.log("이벤트리스트->",eventList)
+    
+  })
+  .catch(e => console.log('캘린더 로드 실패', e))
+}
+
+
+
 
 
 
@@ -184,8 +192,9 @@ export default function Calendar() {
     axios
         .post('http://localhost:8889/smart/programs/PT/reserv', newEvent)
         .then((res, err) => {
-            console.log("backend에서 가져온 값 -->",res.data)
+            console.log("예약 성공시 전달한 값 값 -->",newEvent)
             alert('예약성공')
+            window.location.replace(window.location)
              
         })
         .catch((err) => {
@@ -204,7 +213,32 @@ export default function Calendar() {
 
 
   function handleDelete() {
+
     state.clickInfo.event.remove();
+
+    console.log('삭제버튼클릭시 가져오는 버튼 e 값 ->',state.clickInfo.event)
+
+    const newEvent = {
+      mem_id: userId,
+      trainer:title,
+      // curr_pt_s_dt : state.selectInfo.startStr,
+      // curr_pt_d_dt : state.selectInfo.endStr,
+      start: state.selectInfo?.startStr || start.toISOString(),
+      end: state.selectInfo?.endStr || end.toISOString(),
+      allDay: state.selectInfo?.allDay || false
+    };
+
+
+    axios.post('http://localhost:8889/smart/programs/PT/cancel',newEvent).then((res,err)=>{
+      console.log("삭제 실행 시 보내주는 값 ->",newEvent)
+      console.log("삭제 then-->",res)
+
+    }).catch(err=>{
+      alert(err)
+      console.log(newEvent)
+    })
+    
+
     handleClose();
   }
 
@@ -259,27 +293,15 @@ export default function Calendar() {
               dayMaxEvents={true}
               weekends={weekendsVisible}
 
-              initialEvents={[
-    
-                {
-                  id: userId,
-                  title: "All-day event",
-                  start: todayStr
-                },
-                {
-                  id: userId,
-                  title: "Timed event",
-                  start: todayStr + "T12:00:00",
-                  end: todayStr + "T12:30:00"
-                
-                }
-              ]} 
+
+              events={currentEvents}
               select={handleDateSelect}
               eventContent={renderEventContent} 
               eventClick={handleEventClick}
-              eventsSet={() => handleEvents()}
+
               eventDrop={handleEventDrop}
               eventResize={handleEventResize}
+              datesSet={loadEvents}
 
               dateClick={handleDateClick}
               eventAdd={(e) => {
@@ -297,6 +319,7 @@ export default function Calendar() {
           </Col>
         </Row>
       </Container>
+      
 
       <CustomModal
         title={state.state === "update" ? "Update Booking" : "Make a Booking"}
@@ -314,10 +337,11 @@ export default function Calendar() {
           <select className="form-control" name="title" 
           value={title} onChange={(e) => setTitle(e.target.value)}>
             <option value="" selected disabled hidden> Choose Trainer </option>
-            <option >{}</option>
-            <option >{}</option>
-            <option >{}</option>
-            <option >{}</option>
+            <option value="Lily">Lily</option>
+            <option value="Jessie">Jessie</option>
+            <option value="John">John</option>
+            <option value="Emma">Emma</option>
+            <option value="Jonathan">Jonathan</option>
           </select>
 
           

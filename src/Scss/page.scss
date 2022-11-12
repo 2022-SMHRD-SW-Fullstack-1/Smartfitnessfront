@@ -41,9 +41,8 @@
 
     color: white;
 
-
-
     width: 80%;
+
 
 
     // My page
@@ -162,7 +161,63 @@
         display: flex;
         margin-bottom: 100px;
     }
+
+
+
+    //PT info
+
+    .ptInfoPage{
+        display: flex;
+        flex-direction: column;
+    
+        flex-wrap: wrap;
+    
+        justify-content: center;
+        align-items: center;
+    
+    
+        text-align: center;
+    
+        width: 80%;
+        height: 600px;
+    
+        margin-bottom: 50px;
+        background-color: white;
+
+        color: black;
+
+
+        button{
+            background-color: red;
+            border: none;
+            box-shadow: 2px 2px 2px black;
+            
+            color: white;
+            
+            border-radius: 5px;
+            padding: 5px;
+            margin-top: 50px;
+        }:active{
+            
+            box-shadow: inset 2px 2px 2px black;
+        }
+
+
+
+
+
+    }
+
+    .ptInfoPage img{
+        background-color: black;
+        height: 250px;
+        width: 200px;
+
+    }
 }
 
+.col-md-12 {
+    background-color: white;
+}
 
 

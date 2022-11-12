@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
@@ -8,11 +9,33 @@ import Rating from './Rating'
 
 const Mypage = () => {
 
-    const [userId,setUserId]=useState();
+  const [userId,setUserId]=useState();
+  const [userInfo,setUserInfo]=useState();
+  const nowDate = new Date();
 
-    useEffect(()=>{
-        setUserId(getCookie("x_auth").mem_data.mem_id)
+  const url ="http://localhost:8889/smart/members/membership/"+userId
+  
+  useEffect(()=>{
+    setUserId(getCookie("x_auth").mem_data.mem_id)
     },[])
+
+    
+    useEffect(() => {
+      console.log(userId)
+      console.log(url)
+      axios.get(url,{
+        mem_id:userId})
+          .then((res,err) => {
+            console.log("마이 페이지 axios then-->",res.data);
+            console.log("마이 페이지 axios period Date-->",res.data.mbs_period);
+            console.log("마이 페이지 axios now-->",nowDate);
+            setUserInfo(res.data.mbs_period)
+          }).catch(err=>{
+            console.log("에러-->",err)
+          });
+  }, [url]);
+
+
   return (
     <div className='pagesDiv'>
         <h1>{userId}'s div area</h1>
@@ -22,8 +45,10 @@ const Mypage = () => {
 
             <button>Update profile</button>
             <div>
+
             <h3>Membership</h3>
-            <p>남은 기간 출력</p>
+            <p>{userInfo}</p>
+            
             <Link to='/membership'>
             <button>이용권 연장</button>
             </Link>
