@@ -22,9 +22,9 @@ const EquipBox = (props) => {
 
   const movePage =()=>{
     if(props.type==='1'){
-      navigate("/pt-info?name="+props.name)
+      navigate("/pt-info?name="+props.name+"&seq="+props.seq+"&img="+props.img1)
     }else if(props.type==='0'){
-      navigate("/book-eq?name="+props.name)
+      navigate("/book-eq?name="+props.name+"&video="+props.video)
     }else{
       
     }
