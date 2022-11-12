@@ -7,10 +7,9 @@ const Booking = (props) => {
   const navigate = useNavigate()
 
   useEffect(()=>{
-    if(props.type==="0"){
+    if('mem_data'===null){
       navigate("/login")
     }else{
-
     }
   },[])
   
@@ -18,9 +17,6 @@ const Booking = (props) => {
     <div className='bookingDiv'>
         <h1>Booking</h1>
         <Calendar/>
-        {/* <div>Personal Traning</div>
-        <div>Gx programs</div>
-        <div>Equipments</div> */}
       </div>
   )
 }

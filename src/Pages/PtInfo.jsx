@@ -1,6 +1,7 @@
 import { Rating } from '@mui/material'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getCookie } from '../Components/auth/cookie'
 
 const PtInfo = () => {
   const params = new URLSearchParams(window.location.search)
@@ -13,9 +14,19 @@ const PtInfo = () => {
 
   const navigate = useNavigate()
 
+
+
   const bookBtn =()=>{
-    navigate('/book')
+    if(getCookie('x_auth')===undefined){
+      alert('로그인이 필요한 기능입니다!')
+      navigate('/login')
+    }else{
+      navigate('/book')
+    }
   }
+
+
+  
 
   return (
     <div className='pagesDiv'>
