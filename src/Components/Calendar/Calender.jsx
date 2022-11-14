@@ -142,12 +142,6 @@ function loadEvents() {
 
 
 
-console.log('eventList', currentEvents);
-
-  function handleEvents(events) {
-    setCurrentEvents(currentEvents);
-  }
-
 
 
   function handleEventDrop(checkInfo) {
@@ -304,7 +298,7 @@ console.log('eventList', currentEvents);
               select={handleDateSelect}
               eventContent={renderEventContent} 
               eventClick={handleEventClick}
-              // eventsSet={(events) => handleEvents(events)}
+
               eventDrop={handleEventDrop}
               eventResize={handleEventResize}
               datesSet={loadEvents}

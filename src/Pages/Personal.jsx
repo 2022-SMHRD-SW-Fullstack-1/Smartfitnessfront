@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import EquipBox from '../Components/EquipBox'
+import Star from './Star'
+
 
 const Personal = () => {
 
@@ -25,16 +27,12 @@ const Personal = () => {
       <h1>Personal Training</h1>
 
       <div className='ptList'>
-        {trainerData.map((item,idx)=><EquipBox className='ptListBox'
-        key={item.trainer_name+idx} 
+
         name={item.trainer_name}
         info={item.trainer_info}
         desc={item.trainer_ment}
-        img1={item.trainer_pic}
-        seq={item.trainer_seq}
-        type='1'
-        price={'$'+item.trainer_price+".00(USD)"}
-        />)}
+        img={item.trainer_pic}
+
       </div>
 
 
