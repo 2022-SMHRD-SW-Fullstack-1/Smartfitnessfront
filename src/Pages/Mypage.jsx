@@ -65,7 +65,7 @@ const Mypage = () => {
 
             <h3>Membership <span>Expiration Date</span> </h3>
             
-            <h1>D-{userInfo}</h1>
+            <h1>D-{userInfo&&userInfo}</h1>
             
             <Link to='/membership'>
             <button>Extension</button>
