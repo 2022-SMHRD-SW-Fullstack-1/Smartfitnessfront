@@ -61,10 +61,12 @@ const MenuBar = () => {
               <li><Link to='equip'>Equipment</Link></li>
               <li><span onClick={notice} style={{cursor:'pointer'}}>Booking</span></li>
               <li><Link to='contact'>Contact Us</Link></li>
+              <div className='loginBar'>
               <li className={userState ? 'loginnotic-none' : 'loginnotic'}><Link to='login'>login</Link></li>
               <li className={userState ? 'loginnotic-none' : 'loginnotic'}><Link to='join'>join</Link></li>
               <li className={userState ? 'loginnotic' : 'loginnotic-none'} onClick={logoutBtn}><Link>logout</Link></li>
               <li className={userState ? 'loginnotic' : 'loginnotic-none'}><Link to='mypage'>my page</Link></li>
+              </div>
           </ul>
 
 

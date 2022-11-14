@@ -47,7 +47,7 @@ function Pay(props) {
               merchant_uid: merchant_uid,  // 주문번호
               amount: amount,  // 결제금액
               imp_uid:"SF",
-              buyer_email: "test@naver.com",
+              buyer_email: userEmail,
           })
           .then((r) => {
               if(r.data == "ok"){
@@ -82,19 +82,23 @@ function Pay(props) {
                               } else{
                                 console.log(userEmail)
                                   alert('결제 실패: 결제 응답이 success가 아님');
+                                  window.location.replace('/mypage')
                               }
                           })
                           .catch((e) => {
                               console.log(e);
+                              window.location.replace('/mypage')
                           })
                       } else {
                         console.log(userEmail)
                           alert(`결제 실패: ${response.error_msg}`);
+                          window.location.replace('/mypage')
                       }
                     });
               }else{
                 console.log(userEmail)
                   alert('결제 실패: 결제 데이터 입력 실패');
+                  window.location.replace('/mypage')
               }
           })
           .catch((e) => {

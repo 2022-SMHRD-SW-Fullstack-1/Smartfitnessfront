@@ -50,12 +50,14 @@ const Login = () => {
             },
         })
         .then((res, err) => {
+            let refreshToken = res.headers.get("Authorization");
+            localStorage.setItem("Authorization", refreshToken);
             setCookie("x_auth", {
-                mem_data: res.data
+                mem_data: res.data,
             });
             console.log("backend에서 가져온 값 -->",res.data)
+            console.log("x_auth-->" ,getCookie("x_auth"))
             alert(res.data.mem_id+' 님 환영합니다!')
-            // window.history.goBack()
             window.location.replace('/')
             
         })

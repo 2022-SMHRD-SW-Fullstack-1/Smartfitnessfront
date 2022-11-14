@@ -24,7 +24,7 @@ const EquipBox = (props) => {
     if(props.type==='1'){
       navigate("/pt-info?name="+props.name+"&seq="+props.seq+"&img="+props.img1)
     }else if(props.type==='0'){
-      navigate("/book-eq?name="+props.name+"&video="+props.video)
+      navigate("/book-eq?name="+props.name+"&video="+props.video+"&seq="+props.seq)
     }else{
       
     }
@@ -35,7 +35,6 @@ const EquipBox = (props) => {
       <img onMouseEnter={imgChange} onMouseLeave={imgBack} src={image} alt={props.name}/>
       <h1>{props.name}</h1>
       <p className='eBoxInfo'>{props.info}</p>
-      <p>{props.desc}</p>
       <h2>{props.price}</h2>
     </div>
   )

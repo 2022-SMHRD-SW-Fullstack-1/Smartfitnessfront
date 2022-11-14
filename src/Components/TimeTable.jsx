@@ -28,9 +28,9 @@ const TimeTable = (props) => {
             alert('더 이상 예약할 수 없는 클래스입니다.')
   
           }else{
-            navigate("/gx-prog/book?name"+props.name+
-            "&time="+props.start+
-            "&date="+props.weekday)
+            navigate("/gx-prog/book?name="+props.name+
+            "&date="+props.date+"&weekday="+props.weekday+
+            "&time="+props.time+"&classnum="+props.classnum)
           }
         }
 
