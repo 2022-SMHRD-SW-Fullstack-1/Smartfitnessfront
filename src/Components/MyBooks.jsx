@@ -45,7 +45,7 @@ const MyBooks = () => {
                     <td>Start Date</td> <td>End Date</td> <td>Subject</td> <td>Cancel</td>
                 </tr>
 
-                {bookData.map((item,idx)=> <MyBooksTb key={item+idx} 
+                {bookData&&bookData.map((item,idx)=> <MyBooksTb key={item+idx} 
                 start={item.start}
                 end={item.end}
                 name={item.pg_name}
