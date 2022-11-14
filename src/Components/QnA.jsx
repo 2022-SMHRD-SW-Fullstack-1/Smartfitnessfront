@@ -8,7 +8,7 @@ import {getCookie} from './auth/cookie'
 
 const QnA = () => {
 
-    const [reqId,setReqId] = useState('guest');
+    const [reqId,setReqId] = useState('Write Your Email to contact!');
   const [files,setFiles] = useState([]);
 
   const typeRef = useRef()
@@ -28,7 +28,7 @@ const QnA = () => {
         e.preventDefault()
 
         setUserData({
-          'mem_id' : reqId,
+          'mem_id' : 'from.'+reqId,
           'qna_file' : fileRef.current.value,
           'qna_title' : titleRef.current.value,
           'qna_contents' : messageRef.current.value
@@ -55,7 +55,7 @@ const QnA = () => {
 
 
   useEffect(()=>{
-    getCookie('x_auth')!=null&&setReqId (getCookie('x_auth').mem_data.mem_id)
+    getCookie('x_auth')!=null&&setReqId (getCookie('x_auth').mem_data.mem_email)
   },[])
   return (
     <div id='contact'>
@@ -72,7 +72,7 @@ const QnA = () => {
             </select>
             
             <input type='text' value='To. Admin ' readOnly/>
-            <input type='text' value={'From. '+reqId} readOnly name='mem_id'/>
+            <input type='text' placeholder={reqId} name='mem_id'/>
             <input type='text' placeholder='TITLE'ref={titleRef} required/>
             <textarea placeholder='Write Here' ref={messageRef}></textarea>
             <input type='file' multiple ref={fileRef}/>

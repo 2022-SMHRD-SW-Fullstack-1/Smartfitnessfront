@@ -84,7 +84,7 @@
     }
 
     .mypageDiv{
-        background-color: aqua;
+        background-color: white;
         color: black;
         width: 80%;
         padding: 30px;
@@ -102,6 +102,17 @@
 
     .mypageDiv button:hover{
         background-color: red;
+    }
+
+    .mgMembership{
+        margin: 50px 0px 50px 0px;
+        padding: 20px;
+
+        border: 1px solid black;
+
+        h3,h4{
+            font-weight: bold;
+        }
     }
 
 
@@ -145,7 +156,7 @@
     
         text-align: center;
     
-        width: 80%;
+        width: 100%;
     
         margin-bottom: 50px;
     
@@ -159,7 +170,20 @@
 
     .equipTitle{
         display: flex;
-        margin-bottom: 100px;
+        margin-bottom: 200px;
+    }
+
+    .equipDiv .itemBox{
+        height: 10px;
+
+        h1{
+            font-size: small;
+            font-weight: bolder;
+        }
+
+        .eBoxInfo~p{
+            font-size: large;
+        }
     }
 
 
