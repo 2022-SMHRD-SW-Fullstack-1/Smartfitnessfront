@@ -74,7 +74,7 @@ const Mypage = () => {
 
             <div>
             <h4>예약현황</h4>
-            {/* <MyBooks/> */}
+            <MyBooks/>
             </div>
 
             
