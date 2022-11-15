@@ -1,86 +1,53 @@
-import { useState } from "react";
-import React, { Component } from "react";
-import Star from "./Star";
 
-class Rating extends Component {
+import React, { useState } from 'react';
+import Star from './Star';
+import '../Scss/Rating.scss';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 
-
-  static defaultProps = { max: 5 };
-  constructor(props) {
-    
-    // axios
-    // .put(` http://localhost:8889/smart//programs/trainer/rate${id}`, {
-    //     ratingValue: rating,
-    // })
-    // .then((response) => {
-    //     setRating;
-    //     console.log("success", response);
-    // });
-
-    super(props);
-    this.state = {
-      dynamicValue: props.stars,
-      value: 0
-    };
-    this._colors = {
-      1: '#f44336',
-      2: '#FF5722',
-      3: '#FF9800',
-      4: '#FFC107',
-      5: '#FFEB3B'
-    };
-    // this._meanings = {
-    //   0: "No Rating 🚫",
-    //   1: "Terrible 🤮",
-    //   2: "Mediocre 😒",
-    //   3: "Average 😐",
-    //   4: "Solid 🙂",
-    //   5: "Fantastic 🔥"
-    // };
-    this.handleClick = this.handleClick.bind(this);
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    this.handleMouseLeave = this.handleMouseLeave.bind(this);
-  }
-  handleClick(newValue) {
-    this.setState({
-      value: newValue,
-      dynamicValue: newValue
-    });
-  }
-  handleMouseEnter(newValue) {
-    this.setState({ dynamicValue: newValue });
-  }
-
-  handleMouseLeave(newValue) {
-    this.setState({ dynamicValue: this.state.value });
-  }
-
-  render() {
-    const { dynamicValue, value } = this.state;
-    const starSpans = [];
-    const max = this.props.max;
-    let count = dynamicValue;
+const Rating = ({ numStars = 5 ,starNum}) => {
  
-    for (let v = 1; v <= max; v++) {
-      starSpans.push(
-        <Star
-          key={v}
-          color={this._colors[count]}
-          isFilled={v <= dynamicValue}
-          value={v}
-          handleHover={this.handleMouseEnter}
-          handleHoverLeave={this.handleMouseLeave}
-          handleClick={this.handleClick}
-        />
-      );
-    }
-    return (
-      <div>
-        {/* <p>{this._meanings[value]}</p> */}
-        {starSpans}
-      </div>
-    );
+  const INITIAL_STARS = []
+
+  for (let i = 0; i < numStars; i++) {
+    INITIAL_STARS.push({ id: i, on: false });
   }
+
+
+  const starNumber = {starNum : localStorage.getItem("star")}
+
+  const [stars, setStars] = useState(INITIAL_STARS);
+  const [lastId, setLastId] = useState(null);
+
+  const handleStar=(e)=>{
+    console.log(e.target.key)
+  }
+
+
+  const changeHandler = (event) => {
+    setStars(event.currentTarget.value)
+  }
+
+  useEffect(()=>{
+
+  axios.post('http://localhost:8889/smart/programs/trainer/rate', starNumber)
+  .then(response =>console.log(response))
+  .catch(e=>console.log(e))
+
+  },[starNumber])
+
+
+
+
+
+  return (
+    <div className="Rating">
+      <div className="Stars">
+        {stars.map(star => <Star onClick={handleStar} key={star.id} star={star} stars={stars} setStars={setStars} lastId={lastId} setLastId={setLastId} />)}
+      </div>
+    </div>
+  )
 }
+
 export default Rating;
