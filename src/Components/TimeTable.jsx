@@ -39,6 +39,7 @@ const TimeTable = (props) => {
       <p className='eBoxInfo'>{props.start}</p>
       <span>{weekdays[props.weekday]}요일</span>
       <p>Now : {props.curr}/Max : {props.max}</p>
+      <button className='gxBtn'>Make a Book</button>
     </div>
   )
 }

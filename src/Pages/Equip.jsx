@@ -38,13 +38,13 @@ const Equip = () => {
 
       <div className='equipTitle'>
         <Link to ='cList' smooth={true} duration={500} >
-          <EquipBox name='Cardio'></EquipBox>
+          <EquipBox name='Cardio'img1='https://i.pinimg.com/564x/7c/4e/52/7c4e52f8573de1ada9452e1b7f718b3d.jpg'></EquipBox>
         </Link>
         <Link to ='fList' smooth={true} duration={500} >
-          <EquipBox name='Free Weight'></EquipBox>
+          <EquipBox name='Free Weight' img1='https://barbend.com/wp-content/uploads/2021/11/BarBend-Article-Image-760-x-427-59.jpg'></EquipBox>
         </Link>
         <Link to ='mList' smooth={true} duration={500} >
-          <EquipBox name='Machine'></EquipBox>
+          <EquipBox name='Machine' img1='https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2022/08/Leg-press-vs-squat.jpg?resize=2048%2C1366&ssl=1'></EquipBox>
         </Link>
       </div>
 

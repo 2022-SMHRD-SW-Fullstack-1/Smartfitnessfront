@@ -10,22 +10,25 @@ const BookEq = () => {
   const params = new URLSearchParams(window.location.search)
   const name =params.get("name")
   const video = params.get("video")
-  const seq = params.get("seq")
-  const [currData,setCurrData]=useState({});
+  const seq = Number(params.get("seq"));
+  const [currData,setCurrData]=useState("");
 
 
   const url ="http://localhost:8889/smart/equipments/timetable/"+seq
 
   useEffect(()=>{
-    axios.get(url,{em_seq:seq}).
-    then((res,err)=>{
-      setCurrData(res&&res.data.current_equipment)
+    axios.get(url,{
+      em_seq:seq
+    }).then((res,err)=>{
+      console.log(res)
+      setCurrData(res.data.current_equipment)
     }).catch(err=>{
       console.log(err)
     })
   },[])
   
   console.log("currDate-->",currData)
+
   return (
     <div className='pagesDiv'>
         <h1>{name}</h1>
@@ -33,7 +36,7 @@ const BookEq = () => {
 
         <div>
 
-          {currData&&currData.map((item,idx)=><EqBookTable key={item+idx}/>)}
+          {/* {currData&&currData.map((item,idx)=><EqBookTable key={item+idx}/>)} */}
  
         </div>
 

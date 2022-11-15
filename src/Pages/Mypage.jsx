@@ -78,7 +78,6 @@ const Mypage = () => {
             <h4>예약현황</h4>
 
             <h3></h3>
-            <Rating starts={0} />
 
             </div>
 

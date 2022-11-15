@@ -49,9 +49,9 @@ const Star = ({ star, setStars, stars, lastId, setLastId }) => {
   const highlightStars = (evt) => {
     let curr = evt.target;
     let sibling = curr.previousElementSibling;
-    curr.style.color = 'gold';
+    curr.style.color = 'red';
     while (sibling) {
-      sibling.style.color = 'gold';
+      sibling.style.color = 'red';
       curr = sibling;
       sibling = curr.previousElementSibling;
     }

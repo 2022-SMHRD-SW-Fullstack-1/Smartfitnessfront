@@ -34,9 +34,11 @@ const PtInfo = () => {
       <h1> Hi! I'm {name}</h1>
       <div className='ptInfoPage'>
       <img src={img} alt="트레이너 사진"/>
+      <div className='starZone'>
       <h3>Rating Your Trainer!</h3>
       <Rating id='starSpan'/>
-      <button onClick={bookBtn}>Make a reservation</button>
+      </div>
+      <button className='ptBookBtn' onClick={bookBtn}>Make a reservation</button>
       </div>
     </div>
   )

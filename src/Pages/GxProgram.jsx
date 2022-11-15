@@ -43,6 +43,8 @@ const GxProgram = () => {
       curr={item.curr_num_peo}
       />)}
 
+      
+
 
 
     </div>

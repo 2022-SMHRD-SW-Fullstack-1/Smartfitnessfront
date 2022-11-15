@@ -1,15 +1,15 @@
 .Rating {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: fit-content;
-    height: 0rem;
-    background-color: white;
-  }
-  
-  .Stars {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  height: 0rem;
+  background-color: white;
+}
+
+.Stars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
