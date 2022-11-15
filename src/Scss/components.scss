@@ -171,7 +171,7 @@
     margin: 30px;
     padding-top: 20px;
     width: 200px;
-    height: 200px;
+    height: 300px;
 
     h1{
         font-size: 20pt;
@@ -186,9 +186,46 @@
     cursor: pointer;
 }
 
+.myBooksDiv{
+    display: flex;
+    justify-content: center;
 
+}
 
 .myBooksTable td{
+    width: 800px;
     border: 1px solid black ;
     padding: 5px 10px 5px 10px;
+}
+
+
+.eqTimeTableDiv{    
+    height: 300px;
+    overflow: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.eqTimeTable{
+    width: 600px;
+}
+
+.eqTimeTable th{
+    border: 1px solid white;
+    font-size: larger;
+}
+
+.eqTimeTable td {
+    border: 1px solid white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.eqTimeTable button{
+    background-color: black;
+    color: white;
+}
+
+.eqTimeTable button:hover{
+    color: red;
 }

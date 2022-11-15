@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getCookie } from '../Components/auth/cookie'
+import MyBooks from '../Components/MyBooks'
 
 import Star from './Star'
 import Rating from './Rating'
@@ -15,11 +16,10 @@ const Mypage = () => {
   const [userInfo,setUserInfo]=useState();
   const nowDate = new Date();
 
-  const url ="http://localhost:8889/smart/members/membership/"+userId
+  const url ="http://localhost:8889/smart/members/membership/"+getCookie("x_auth").mem_data.mem_id
   
   useEffect(()=>{
     setUserId(getCookie("x_auth").mem_data.mem_id)
-
     },[])
 
     
@@ -77,7 +77,8 @@ const Mypage = () => {
             <div>
             <h4>예약현황</h4>
 
-            <h3></h3>
+            <MyBooks/>
+
 
             </div>
 

@@ -10,11 +10,14 @@ const TimeTable = (props) => {
 
   const navigate =useNavigate()
 
-  const movePage =()=>{
+  const month = props.date.substring(2,4)
+  const day = props.date.substring(4,6)
 
-    
+  const hour = props.time.substring(0,2)
+  const mins = props.time.substring(4,6)
 
-  }
+  
+
 
   
   return (
@@ -35,11 +38,16 @@ const TimeTable = (props) => {
         }
 
     }}>
-      <h1>{props.name}</h1>
-      <p className='eBoxInfo'>{props.start}</p>
-      <span>{weekdays[props.weekday]}요일</span>
+      <p>{month}월 {day}일 <span>{weekdays[props.weekday]}요일</span></p>
+      <h1>{props.name} </h1>
       <p>Now : {props.curr}/Max : {props.max}</p>
       <button className='gxBtn'>Make a Book</button>
+      <p className='eBoxInfo'>{props.start}</p>
+      <p>Start : {hour}시 {mins}분</p>
+      <p>End : {hour}시 30분 </p>
+      
+      
+      
     </div>
   )
 }

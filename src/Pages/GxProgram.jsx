@@ -24,6 +24,8 @@ const GxProgram = () => {
           .then(res => {
               console.log("Gx페이지 axios then-->",res.data);
               setPgData(res.data)
+          }).catch(err=>{
+            console.log(err)
           });
   }, [url]);
 
