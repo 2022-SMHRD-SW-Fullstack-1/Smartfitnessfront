@@ -57,7 +57,7 @@ const Mypage = () => {
 
   return (
     <div className='pagesDiv'>
-        <h1>Hi! {userId} </h1>
+        <h1>Hi! {getCookie("x_auth").mem_data.mem_name} </h1>
 
 
         <div className='mypageDiv'>

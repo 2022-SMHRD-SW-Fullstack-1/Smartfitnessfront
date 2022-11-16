@@ -57,7 +57,7 @@ const Login = () => {
             });
             console.log("backend에서 가져온 값 -->",res.data)
             console.log("x_auth-->" ,getCookie("x_auth"))
-            alert(res.data.mem_id+' 님 환영합니다!')
+            alert(getCookie("x_auth").mem_data.mem_name+' 님 환영합니다!')
             window.location.replace('/')
             
         })
