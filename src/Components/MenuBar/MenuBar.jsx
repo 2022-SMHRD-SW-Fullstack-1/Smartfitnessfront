@@ -52,7 +52,10 @@ const MenuBar = () => {
         <nav className='menuBox'> 
 
           {/* 로고 출력 */}
-          <a href='/' className='logo'><img src={logo} alt='로고'/></a>
+          <a href='/'>
+            <h1 className='logo'>SMART<span> FITNESS</span></h1>
+          </a>
+          {/* <a href='/' className='logo'><img src={logo} alt='로고'/></a> */}
 
           {/* 카테고리 클릭 시 이동 */}
           <ul className='menu'>

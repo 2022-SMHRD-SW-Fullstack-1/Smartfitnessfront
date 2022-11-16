@@ -18,6 +18,15 @@
     justify-content: center;
     align-items: center;}
 
+	.logo{
+		color: red;
+		font-size: 16pt;
+	}
+
+	.logo span{
+		color: white;
+	}
+
 
 #root{ 
 	display: flex;
