@@ -1,8 +1,38 @@
+
+## 🥊 Smart Fitness
+* 프로젝트 기간 (2022년 10. 06. ~ 11. 16.)
+* 예약 기능이 있는 피트니스 웹 사이트 서비스
+
+## 프로젝트 개발 목적
+* 단체 프로그램, 개인운동, 운동기구 예약을 통해 사용자의 대기 잉여 시간 감축
+
+## 주요 기능
+* 단체 프로그램, 개인운동, 운동기구 예약 및 조회 기능
+* 사이트 내 문의 페이지 생성
+* 사이트 내 이용권 결제 페이지 생성
+
+## 기술스택
+![image](https://user-images.githubusercontent.com/112445857/202659508-571fb511-b208-41f9-b751-fc889a6dddcd.png)
+
+
+## 시스템 아키텍처
+![image](https://user-images.githubusercontent.com/112445857/202657947-677c5013-c3bd-4463-a723-b1ee7fb239bb.png)
+
+## 서비스 흐름도
+![image](https://user-images.githubusercontent.com/112445857/202659725-5d6c8145-05c7-4bfd-8977-502a8604e946.png)
+
+## 팀원역할
+![image](https://user-images.githubusercontent.com/112445857/202660176-dc80cfcf-7c1b-4320-9f7f-9adee32e3833.png)
+
+
+## 트러블 슈팅
+![image](https://user-images.githubusercontent.com/112445857/202660770-4d4b835a-366f-44da-8d78-e8432108754d.png)
+
+
+
+
 <div>
-	<h3>📚 Tech Stack</h3>
 	<p>✨ Platforms & Languages</p>
-</div>
-<div>
 	<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
 	<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" />
 	<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" />
@@ -29,6 +59,9 @@
 <br>
 
 
+<div>
+	
+</div>
 
 
 
@@ -38,76 +71,3 @@
 
 
 
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
