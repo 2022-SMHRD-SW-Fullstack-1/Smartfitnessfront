@@ -114,5 +114,4 @@ function Pay(props) {
       ); 
   }
 
-
 export default Pay;
